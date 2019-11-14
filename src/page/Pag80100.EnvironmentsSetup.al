@@ -13,7 +13,7 @@ page 80100 "AIR Environments Setup"
         {
             group(General)
             {
-                field("Base API url"; "Base API url")
+                field("Base API url"; "Resource url")
                 {
                     ApplicationArea = All;
                     ExtendedDatatype = URL;
@@ -49,6 +49,33 @@ page 80100 "AIR Environments Setup"
             }
         }
     }
+    actions
+    {
+        area(Processing)
+        {
+            action("LGS TestConnection")
+            {
+                Caption = 'Test Connection';
+                ToolTip = 'Test Connection with the subsidiary web service';
+                Image = LinkWeb;
+                ApplicationArea = Basic;
+                Promoted = true;
+                PromotedOnly = true;
+                PromotedIsBig = true;
+                PromotedCategory = Process;
+                trigger OnAction()
+                var
+                    ConnectionIsSuccessfullyEstablishedMsg: Label 'Congratulations! Connection is successfully established.';
+                    ErrorMsg: Text;
+                begin
+                    if not isConnectionEstablished(true, ErrorMsg) then
+                        Error(ErrorMsg);
+                    Message(ConnectionIsSuccessfullyEstablishedMsg);
+                end;
+
+            }
+        }
+    }
 
     var
         Password: Text[50];
@@ -60,6 +87,14 @@ page 80100 "AIR Environments Setup"
     begin
         InsertIfNotExists();
     end;
+
+    trigger OnAfterGetRecord()
+    begin
+
+        IF HasPassword() THEN
+            Password := 'Password Dots';
+    end;
+
 
     procedure CheckEncryption()
     begin
