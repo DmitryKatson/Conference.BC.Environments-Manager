@@ -37,5 +37,13 @@ codeunit 80101 "AIR Environments Mgt."
         NewBCCloudEnvironment.NewBCCloudEnvironment(EnvironmentName, EnvironmentCountry, EnvironmentVersion, EnvironmentType);
     end;
 
+    procedure RemoveBCCloudEnvironment(EnvironmentName: text[30]);
+    var
+        RemoveBCCloudEnvironment: Codeunit "AIR DelBCCloudEnvironment WS";
+    begin
+        RemoveBCCloudEnvironment.RemoveBCCloudEnvironmentConfirm(EnvironmentName);
+    end;
+
+
 
 }

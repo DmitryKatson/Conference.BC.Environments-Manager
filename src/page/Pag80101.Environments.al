@@ -81,8 +81,25 @@ page 80101 "AIR Environments"
                 trigger OnAction()
                 begin
                     RunCreateNewEnvironmentWizard();
+                    GetBCCloudEnvironments();
                 end;
             }
+            action(Remove)
+            {
+                ApplicationArea = All;
+                Image = Delete;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+                PromotedOnly = true;
+                ToolTip = 'Remove environment';
+                trigger OnAction()
+                begin
+                    RemoveBCCloudEnvironment();
+                    GetBCCloudEnvironments();
+                end;
+            }
+
         }
         area(Navigation)
         {

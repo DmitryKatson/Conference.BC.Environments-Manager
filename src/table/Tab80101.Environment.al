@@ -62,5 +62,12 @@ table 80101 "AIR Environment"
         EnvironmentMgt.NewBCCloudEnvironment(EnvironmentName, EnvironmentCountry, EnvironmentVersion, EnvironmentType);
     end;
 
+    procedure RemoveBCCloudEnvironment()
+    var
+        EnvironmentMgt: Codeunit "AIR Environments Mgt.";
+    begin
+        EnvironmentMgt.RemoveBCCloudEnvironment(Name);
+    end;
+
 
 }
