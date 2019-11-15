@@ -8,7 +8,7 @@
             "server": "http://NTDWorkshop",
             "serverInstance": "BC",
             "authentication": "UserPassword",
-            "startupObjectId": 22,
+            "startupObjectId": 80101,
             "startupObjectType": "Page",
             "breakOnError": true,
             "launchBrowser": true,

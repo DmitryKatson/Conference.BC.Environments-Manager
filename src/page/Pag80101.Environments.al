@@ -19,6 +19,12 @@ page 80101 "AIR Environments"
                 field(Name; Name)
                 {
                     ApplicationArea = All;
+                    ExtendedDatatype = URL;
+
+                    trigger OnDrillDown()
+                    begin
+                        Hyperlink(webClientLoginUrl);
+                    end;
                 }
                 field(Version; Version)
                 {
@@ -35,9 +41,11 @@ page 80101 "AIR Environments"
                 field(Status; Status)
                 {
                     ApplicationArea = All;
+                    StyleExpr = StyleTxt;
                 }
                 field(webClientLoginUrl; webClientLoginUrl)
                 {
+                    Caption = 'Web client url';
                     ApplicationArea = All;
                     ExtendedDatatype = URL;
                 }
@@ -62,6 +70,34 @@ page 80101 "AIR Environments"
                 end;
             }
         }
+        area(Navigation)
+        {
+            action(Setup)
+            {
+                ApplicationArea = All;
+                Image = Setup;
+                Promoted = true;
+                PromotedCategory = Report;
+                PromotedIsBig = true;
+                PromotedOnly = true;
+                RunObject = page "AIR Environments Setup";
+            }
+        }
     }
+    var
+        [InDataSet]
+        StyleTxt: Text;
+
+    trigger OnAfterGetRecord()
+    begin
+        SetStyle(StyleTxt, Status);
+    end;
+
+    local procedure SetStyle(var Style: text; Status: Text)
+    begin
+        If (Status <> 'Active') then
+            style := 'Attention';
+    end;
+
 
 }
