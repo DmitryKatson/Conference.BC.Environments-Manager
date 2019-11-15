@@ -1,6 +1,6 @@
 page 80102 "AIR Env. Creation Wizard"
 {
-    Caption = 'PageName';
+    Caption = 'Create New Business Central Cloud Environment';
     PageType = NavigatePage;
     SourceTable = "AIR Environment";
     SourceTableTemporary = true;
