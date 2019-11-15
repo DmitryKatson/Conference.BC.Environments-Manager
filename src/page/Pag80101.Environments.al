@@ -69,6 +69,20 @@ page 80101 "AIR Environments"
                     GetBCCloudEnvironments();
                 end;
             }
+            action(New)
+            {
+                ApplicationArea = All;
+                Image = New;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+                PromotedOnly = true;
+                ToolTip = 'Create new environment';
+                trigger OnAction()
+                begin
+                    RunCreateNewEnvironmentWizard();
+                end;
+            }
         }
         area(Navigation)
         {
@@ -95,6 +109,7 @@ page 80101 "AIR Environments"
 
     local procedure SetStyle(var Style: text; Status: Text)
     begin
+        style := 'standard';
         If (Status <> 'Active') then
             style := 'Attention';
     end;

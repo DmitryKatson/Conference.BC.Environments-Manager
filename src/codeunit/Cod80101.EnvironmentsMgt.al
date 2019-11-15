@@ -24,4 +24,18 @@ codeunit 80101 "AIR Environments Mgt."
     begin
         GetBCCloudEnvironments.GetBCCloudEnvironments();
     end;
+
+    procedure RunCreateNewEnvironmentWizard()
+    begin
+        page.RunModal(page::"AIR Env. Creation Wizard");
+    end;
+
+    procedure NewBCCloudEnvironment(EnvironmentName: text[30]; EnvironmentCountry: code[2]; EnvironmentVersion: code[20]; EnvironmentType: Text);
+    var
+        NewBCCloudEnvironment: Codeunit "AIR NewBCCloudEnvironments WS";
+    begin
+        NewBCCloudEnvironment.NewBCCloudEnvironment(EnvironmentName, EnvironmentCountry, EnvironmentVersion, EnvironmentType);
+    end;
+
+
 }

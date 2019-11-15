@@ -6,7 +6,7 @@ codeunit 80103 "AIR GetBCCloudEnvironments WS"
         APIRequest: Text;
         Environment: Record "AIR Environment";
     begin
-        APIRequest := '/v1.2/admin/applications/BusinessCentral/environments/';
+        APIRequest := '/admin/v2.0/applications/BusinessCentral/environments';
 
         InitArguments(Arguments, APIRequest);
 

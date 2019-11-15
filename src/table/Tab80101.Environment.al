@@ -48,4 +48,19 @@ table 80101 "AIR Environment"
         EnvironmentMgt.GetBCCloudEnvironments();
     end;
 
+    procedure RunCreateNewEnvironmentWizard();
+    var
+        EnvironmentMgt: Codeunit "AIR Environments Mgt.";
+    begin
+        EnvironmentMgt.RunCreateNewEnvironmentWizard();
+    end;
+
+    procedure NewBCCloudEnvironment(EnvironmentName: text[30]; EnvironmentCountry: code[2]; EnvironmentVersion: code[20]; EnvironmentType: Text);
+    var
+        EnvironmentMgt: Codeunit "AIR Environments Mgt.";
+    begin
+        EnvironmentMgt.NewBCCloudEnvironment(EnvironmentName, EnvironmentCountry, EnvironmentVersion, EnvironmentType);
+    end;
+
+
 }
