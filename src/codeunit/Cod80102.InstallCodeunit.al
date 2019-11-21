@@ -7,11 +7,11 @@ codeunit 80102 "AIR Install Codeunit"
         Setup: Record "AIR Environments Setup";
     begin
         Setup.InsertIfNotExists();
-        Setup."App Id" := '581e2ea2-008e-44e9-8ec0-9e5d40540b27';
+        Setup."App Id" := 'someid';
         Setup."Resource url" := 'https://api.businesscentral.dynamics.com';
-        Setup."Tenant Domain" := 'airappsbctestus.onmicrosoft.com';
-        Setup."User Name" := 'admin.prem@airappsbctestus.onmicrosoft.com';
-        Setup.SavePassword('Dmitry$$$2019');
+        Setup."Tenant Domain" := 'sometetant.onmicrosoft.com';
+        Setup."User Name" := 'user@sometetant.onmicrosoft.com';
+        Setup.SavePassword('somepassword');
         Setup.Modify();
     end;
 

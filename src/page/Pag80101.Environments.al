@@ -108,7 +108,7 @@ page 80101 "AIR Environments"
                 ApplicationArea = All;
                 Image = Setup;
                 Promoted = true;
-                PromotedCategory = Report;
+                PromotedCategory = Process;
                 PromotedIsBig = true;
                 PromotedOnly = true;
                 RunObject = page "AIR Environments Setup";
